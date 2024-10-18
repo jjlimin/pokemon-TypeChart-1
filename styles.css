@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    font-family: "Chakra Petch", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-color: rgb(12, 8, 59);
+    color: white;
+    text-align: center;
+}
+
+.media-scroller {
+    display: grid;
+    gap: 8px;
+    grid-auto-flow: column;
+    grid-auto-columns: 13%;
+    margin-top: 12px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-behavior: smooth;
+    position: fixed;    /* Fix the element at the bottom */
+    bottom: 0;          /* Align it to the bottom of the viewport */
+    margin-bottom: 12px;
+    padding-left: 12px;
+}
+
+.media-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.media-element {
+    display: grid;
+    gap: 8px;
+    background-color: rgb(34, 34, 66);
+    padding: 8px;
+    margin-bottom: 8px;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.media-element > h4 {
+    text-align: center;
+}
+
+.media-element:hover {
+    transform: scale(1.02);
+    filter: grayscale(50);
+}
+
+img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* Styling the result div */
+.results {
+    background-color: rgb(34, 34, 66);
+    border: 2px solid rgb(34, 34, 66);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+
+    max-width: 600px;
+    margin: 24px auto;
+    transition: all 0.3s ease;
+}
+
+.results h2 {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.results p {
+    color: white;
+    font-size: 1.1em;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+/* Highlight the key sections (damage relations) */
+.results strong {
+    color: #007bff; /* Nice blue for strong text */
+}
+
+/* Add smooth hover effect to the results box */
+.results:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    .results {
+        margin: 24px 12px;
+    }
+    .media-scroller {
+        grid-auto-columns: 9%;
+    }
+}
