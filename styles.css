@@ -42,6 +42,8 @@ body {
     transition: all 0.3s;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 4px;
 }
 
 .media-element > h4 {
@@ -96,10 +98,25 @@ img {
 }
 
 @media (max-width: 600px) {
+
+    .media-scroller {
+        display: grid;
+        gap: 8px;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(100px, 13%);
+        margin-top: 12px;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scroll-behavior: smooth;
+        position: fixed;  /* Keep the scroller fixed */
+        bottom: 0;        /* Align it to the bottom of the viewport */
+        width: 100vw;     /* Ensure it spans the full viewport width */
+        background-color: rgb(12, 8, 59);  /* Set background to match the rest of the page */
+        padding-left: 12px;
+        z-index: 1000;    /* Ensure it stays on top of other content */
+    }
+
     .results {
         margin: 24px 12px;
-    }
-    .media-scroller {
-        grid-auto-columns: 9%;
     }
 }
